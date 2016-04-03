@@ -41,10 +41,10 @@ public class LoginController extends BaseController {
 	@RequestMapping("/demo")
 	public String helloMvc(HttpSession httpSession) {
 
-		System.out.println("进入：HelloController-->helloMvc");
+		//System.out.println("进入：HelloController-->helloMvc");
 
-		logger.info("helloMvc-Controller123");
-		this.loginSevice.helloMvc();
+		//logger.info("helloMvc-Controller123");
+		this.loginSevice.getOperateLog();
 		// 视图渲染，/WEB-INF/views/home.jsp
 		return "demo";
 	}

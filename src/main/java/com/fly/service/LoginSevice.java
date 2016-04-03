@@ -1,12 +1,14 @@
 package com.fly.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fly.base.controller.BaseController;
-import com.fly.base.dao.LoginDao;
+import com.fly.dao.LoginDao;
+import com.fly.domain.OperateLog;
 
 @Service
 public class LoginSevice {
@@ -15,8 +17,13 @@ public class LoginSevice {
 	@Autowired
 	private LoginDao loginDao;
 
-	public void helloMvc() {
-		logger.info("helloMvc-Service");
-		this.loginDao.helloMvc();
+	public OperateLog getOperateLog() {
+		return this.loginDao.getOperateLog();
 	}
+	
+	
+/*	public void helloMvc() {
+		//logger.info("helloMvc-Service");
+		this.loginDao.helloMvc();
+	}*/
 }
