@@ -14,11 +14,12 @@ import com.fly.domain.OperateLog;
 public class LoginSevice {
 	protected static Logger logger = LoggerFactory.getLogger(LoginSevice.class);
 	
-	@Autowired
-	private LoginDao loginDao;
+	//@Autowired
+	//private LoginDao loginDao;
 
 	public OperateLog getOperateLog() {
-		return this.loginDao.getOperateLog();
+		//return this.loginDao.getOperateLog();
+		return null;
 	}
 	
 	

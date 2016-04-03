@@ -15,11 +15,11 @@ import com.fly.domain.*;
 @Repository
 public class LoginDao  {
 
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
+	//@Autowired
+	//private JdbcTemplate jdbcTemplate;
 
 	public OperateLog getOperateLog() {
-		String sqlStr = " SELECT * from  operatelog where id=1";
+		/*String sqlStr = " SELECT * from  operatelog where id=1";
 		final OperateLog log = new OperateLog();
 		jdbcTemplate.query(sqlStr,new RowCallbackHandler() {
 			public void processRow(ResultSet rs) throws SQLException {
@@ -30,7 +30,8 @@ public class LoginDao  {
 			}
 		});
 		
-		return log;
+		return log;*/
+		return null;
 	}
 
 	
