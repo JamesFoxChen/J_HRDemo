@@ -1,6 +1,10 @@
 package com.fly.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import com.fly.domain.OperateLog;
+import java.util.List;
 
 @Repository
 public interface UserMapper {
@@ -14,4 +18,16 @@ public interface UserMapper {
 	 */
 
 	Integer count();
+	
+	public OperateLog get(@Param("id")int id);
+	
+	public List<OperateLog> getList(OperateLog log);
+	
+	public int add(OperateLog log);
+	
+	public int update(OperateLog log);
+	
+	public int delete(int id);
+	
+	public int deletebatch(List<Integer> ids);
 }

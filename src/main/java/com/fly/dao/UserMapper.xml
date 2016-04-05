@@ -5,4 +5,59 @@
 	<select id="count" resultType="Integer">
 		SELECT count(*) FROM operatelog
 	</select>
+
+	<select id="get" resultType="OperateLog"
+		parameterType="java.lang.Integer">
+		SELECT * FROM operatelog where ID = #{id}
+	</select>
+
+	<select id="getList" resultType="OperateLog"
+		parameterType="com.fly.domain.OperateLog">
+		SELECT * FROM operatelog
+		<where>
+			<if test="id != null and id != ''">
+				id = #{id}
+			</if>
+			<if test="admin_name != null and admin_name != ''">
+				and admin_name like concat('%',#{admin_name},'%')
+			</if>
+		</where>
+	</select>
+
+	<insert id="add" parameterType="OperateLog"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into operatelog
+		(admin_name,created,remark)
+		VALUES
+		(#{admin_name},SYSDATE(),#{remark})
+	</insert>
+
+	<update id="update" parameterType="OperateLog">
+		UPDATE operatelog
+		<set>
+			<if test="admin_name != null">
+				admin_name = #{admin_name},
+			</if>
+			<if test="created != null">
+				created = #{created}
+			</if>
+		</set>
+		WHERE
+		id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from operatelog
+		where
+		id
+		= #{id}
+	</delete>
+
+	<delete id="deletebatch" parameterType="java.util.List">
+		delete from operatelog where id IN
+		<foreach collection="list" index="index" item="item" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
 </mapper>

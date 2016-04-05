@@ -2,9 +2,9 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD  Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
    
 <configuration>  
-    <!-- <typeAliases>  
-        <typeAlias alias="Student" type="com.matol.entity.User" />  
-    </typeAliases>   -->
+     <typeAliases>  
+        <typeAlias alias="OperateLog" type="com.fly.domain.OperateLog" />  
+    </typeAliases>   
        
     <mappers>  
         <mapper resource="com/fly/dao/UserMapper.xml" />  
